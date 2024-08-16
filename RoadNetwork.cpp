@@ -119,7 +119,7 @@ void RoadNetwork::addSegment(const string& name, const string& start_intersectio
     road_segments[name] = new RoadSegment(name, start_intersection, end_intersection, dist, num_lanes);
 }
 
-int RoadNetwork::addIntersection(const string& name, vector<RoadSegment> &connected_roads) {
+int RoadNetwork::addIntersection(const string& name) {
     /* error check */
     if (intersections.find(name) != intersections.end()) {
         fprintf(stderr, "Warning: intersection already exists\n");

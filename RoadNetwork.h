@@ -26,7 +26,7 @@ class RoadNetwork {
         // adding an isolated road segment
         int addRoadSegment(const string& name, int dist, int num_lanes, bool is_oneway);
         // adding a named intersection
-        int addIntersection(const string& name, vector<RoadSegment> &connected_roads);
+        int addIntersection(const string& name);
         int addPOI(const string& name, const string& road_loc, int distance);
 
         /* shortest path implementations */

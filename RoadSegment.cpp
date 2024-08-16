@@ -14,10 +14,18 @@ int RoadSegment::getLength() const{
 }
 
 int RoadSegment::getPOIEnd(const string& poi) const {
+    if (POIs_loc.find(poi) == POIs_loc.end()) {
+        fprintf(stderr, "Error, POI does not exist");
+        return 0;
+    }
     return POIs_loc.find(poi)->second.second;
 }
 
 int RoadSegment::getPOIStart(const string& poi) const {
+    if (POIs_loc.find(poi) == POIs_loc.end()) {
+        fprintf(stderr, "Error, POI does not exist");
+        return 0;
+    }
     return POIs_loc.find(poi)->second.first;
 }
 
