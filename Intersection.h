@@ -10,6 +10,7 @@ class Intersection {
     public:
         explicit Intersection(const string &name_);
         void addConnection(const string& road);
+        set<string> getConnectedRoads();
 
     private:
         string name;

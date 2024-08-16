@@ -5,16 +5,18 @@ using namespace std;
 
 int main() {
     RoadNetwork r = RoadNetwork("test");
-    r.addRoadSegment("N1", 4, 4);
-    r.addRoadSegmentNoEnd("N2", "N1", 2, 4);
-    r.addRoadSegmentStartEnd("N3", "N1", "N2", 2, 4);
-    r.addPOI("A", "N1", 1);
-    r.addPOI("B", "N1", 4);
-    r.shortestPath("A", "B");
-    RoadSegment* road = r.getRoad("N1");
-    cout<<road->getStartIntersection()<<endl;
-    cout<<road->getEndIntersection()<<endl;
-    cout<<road->getPOIStart("A")<<endl;
-    cout<<road->getPOIEnd("A")<<endl;
+    r.addRoadSegment("N4", 4, 4);
+    r.addRoadSegmentNoEnd("N1","N4",true, 4, 4);
+    r.addRoadSegmentNoEnd("N3", "N1", false, 2, 4);
+    r.addRoadSegmentNoEnd("N6", "N3", true, 1, 4);
+    r.addRoadSegmentStartEnd("N5", "N4", true, "N6", true, 8, 4);
+    r.addRoadSegmentNoEnd("N2", "N4", true, 2, 4);
+    r.addRoadSegmentStartEnd("N7", "N1", true, "N2", true, 3, 4);
+    r.addRoadSegmentNoEnd("N8", "N2", true, 2, 4);
+    r.addPOI("A", "N4", 1);
+    r.addPOI("B", "N4", 3);
+    r.addPOI("C", "N5", 7);
+    r.addPOI("D", "N8", 1);
+    r.printPrettyShortestPath("A", "D");
     return 1;
 }
