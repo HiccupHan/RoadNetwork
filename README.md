@@ -7,6 +7,18 @@
 ### Member Functions:
     void cleanSlate(): clears the network
     string getNetworkName(): returns the name of the network
+    unordered_map<string, RoadSegment*> getRoadSegments():
+        Get a map of the current road segments
+        Key: road segment names
+        Value: road segment object pointers
+    unordered_map<string, Intersection*> getIntersections():
+        Get a map of current Intersections
+        Key: intersection names
+        Value: Intersection object pointers
+    unordered_map<string, POI*> getPOIs()
+        Get a map of Points of interest
+        Key: POI names
+        Value: POI object pointers
 
     int addRoadSegmentStartEnd(const string& name, const string& start_road_segment, bool start_is_end, const string& end_road_segment, bool end_is_end, int dist, int num_lanes, bool is_oneway):
         Adds a road segment with specified connected roads for both the start and end of the new segment

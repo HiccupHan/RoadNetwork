@@ -19,6 +19,15 @@ RoadNetwork::~RoadNetwork() {
 string RoadNetwork::getNetworkName() {
     return name;
 }
+unordered_map<string, RoadSegment*> RoadNetwork::getRoadSegments() {
+    return road_segments;
+}
+unordered_map<string, Intersection*> RoadNetwork::getIntersections() {
+    return intersections;
+}
+unordered_map<string, POI*> RoadNetwork::getPOIs() {
+    return POIs;
+}
 void RoadNetwork::cleanSlate() {
     for (auto & road_segment : road_segments) {
         delete road_segment.second;

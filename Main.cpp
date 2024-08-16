@@ -1,5 +1,4 @@
 #include <string>
-#include <iostream>
 #include "RoadNetwork.h"
 using namespace std;
 
@@ -17,6 +16,12 @@ int main() {
     r.addPOI("B", "N4", 3);
     r.addPOI("C", "N5", 7);
     r.addPOI("D", "N8", 1);
+    r.printPrettyShortestPath("A", "A");
+    r.printPrettyShortestPath("A", "B");
     r.printPrettyShortestPath("A", "C");
+    r.printPrettyShortestPath("A", "D");
+    r.printPrettyShortestPath("D", "A");
+    r.printPrettyShortestPath("B", "D");
+    r.printPrettyShortestPath("B", "C");
     return 1;
 }

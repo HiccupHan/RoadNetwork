@@ -15,6 +15,9 @@ class RoadNetwork {
         // clear the network
         void cleanSlate();
         string getNetworkName();
+        unordered_map<string, RoadSegment*> getRoadSegments();
+        unordered_map<string, Intersection*> getIntersections();
+        unordered_map<string, POI*> getPOIs();
 
         /* add road segments */
         // adding road segment with specified start and end connections
