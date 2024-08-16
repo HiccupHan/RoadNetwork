@@ -6,6 +6,7 @@
     RoadNetwork(const string &name_): constructs a network with specified name (name_)
 ### Member Functions:
     void cleanSlate(): clears the network
+
     string getNetworkName(): returns the name of the network
     unordered_map<string, RoadSegment*> getRoadSegments():
         Get a map of the current road segments
@@ -72,6 +73,7 @@
     POI(const string &name_, const string &road_): constructs a named (_name) POI located on a road with name (road_)
 ### Member Functions:
     string getName() const: returns the name of POI
+
     string getRoad() const: returns the name of the road POI is on
 
 ## RoadSegment
@@ -90,6 +92,7 @@
     string getStartIntersection() const: returns the name of the intersection at the end of the road
     string getEndIntersection() const: returns the name of the intersection at the end of the road
     string getName() const: returns the name of the road
+
     void addPOI(const string& poi, int loc): adds a poi to the current road at distance from the start (loc)
 
 ## Intersection
@@ -98,4 +101,5 @@
 ### Member Functions:
     set<string> getConnectedRoads() const: returns a set of names of roads that are connected to the intersection
     string getName() const: returns the name of the intersection
+
     addConnection(const string& road): adds a new road that is connected to the current one
