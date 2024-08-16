@@ -10,9 +10,12 @@ class RoadSegment {
         int getLength() const;
         int getPOIStart(const string& poi) const;
         int getPOIEnd(const string& poi) const;
-        void addPOI(const string& poi, int loc);
         string getStartIntersection() const;
         string getEndIntersection() const;
+        string getName() const;
+
+        void addPOI(const string& poi, int loc);
+
     private:
         string name;
         string start_intersection;

@@ -1,4 +1,3 @@
-#include <string>
 #include "Intersection.h"
 using namespace std;
 
@@ -10,6 +9,10 @@ void Intersection::addConnection(const string& road) {
     connected_segments.insert(road);
 }
 
-set<string> Intersection::getConnectedRoads() {
+set<string> Intersection::getConnectedRoads() const {
     return connected_segments;
+}
+
+string Intersection::getName() const {
+    return name;
 }

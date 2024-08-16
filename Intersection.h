@@ -1,7 +1,4 @@
 #pragma once
-
-#include <vector>
-#include "RoadSegment.h"
 #include <set>
 #include <string>
 using namespace std;
@@ -9,8 +6,10 @@ using namespace std;
 class Intersection {
     public:
         explicit Intersection(const string &name_);
+        set<string> getConnectedRoads() const;
+        string getName() const;
+
         void addConnection(const string& road);
-        set<string> getConnectedRoads();
 
     private:
         string name;

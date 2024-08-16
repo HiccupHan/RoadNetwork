@@ -1,5 +1,3 @@
-#include <string>
-#include <unordered_map>
 #include "RoadSegment.h"
 using namespace std;
 
@@ -18,13 +16,9 @@ int RoadSegment::getLength() const{
 int RoadSegment::getPOIEnd(const string& poi) const {
     return POIs_loc.find(poi)->second.second;
 }
+
 int RoadSegment::getPOIStart(const string& poi) const {
     return POIs_loc.find(poi)->second.first;
-}
-
-void RoadSegment::addPOI(const string& poi, const int loc) {
-    POIs_loc[poi].first = loc;
-    POIs_loc[poi].second = length - loc;
 }
 
 string RoadSegment::getStartIntersection() const {
@@ -34,4 +28,15 @@ string RoadSegment::getStartIntersection() const {
 string RoadSegment::getEndIntersection() const {
     return end_intersection;
 }
+
+string RoadSegment::getName() const {
+    return name;
+}
+
+void RoadSegment::addPOI(const string& poi, const int loc) {
+    POIs_loc[poi].first = loc;
+    POIs_loc[poi].second = length - loc;
+}
+
+
 
